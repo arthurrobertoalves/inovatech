@@ -479,7 +479,9 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 id="route-heading">Via<span>Verde</span></h1>
-                    <p class="hero-subtitle">Otimização inteligente de rotas para carretos e entregas com a <span>inovatech</span></p>
+                    <p class="hero-subtitle">Otimização inteligente de rotas para carretos e entregas com a
+                        <span>inovatech</span>
+                    </p>
                     <div class="hero-badges">
                         <span class="badge"><i class="fas fa-bolt"></i> Economize até 30% de combustível</span>
                         <span class="badge"><i class="fas fa-clock"></i> Reduza o tempo de entrega</span>
@@ -501,13 +503,16 @@
                 <div class="planner-container">
                     <div class="input-card">
                         <h3><i class="fas fa-map-marked-alt"></i> Informações da Rota</h3>
-                        
+
                         <div class="input-group">
                             <label for="orderCount">Quantidade de encomendas hoje:</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-box-open"></i>
                                 <input type="number" id="orderCount" min="0" placeholder="Ex: 5" class="modern-input">
                             </div>
+                            <button id="confirmOrderCount" class="btn btn-primary" style="margin-top: 10px;">
+                                <i class="fas fa-check"></i> Confirmar
+                            </button>
                         </div>
 
                         <div id="addressInputContainer" class="address-input-container" style="display: none;">
@@ -515,10 +520,11 @@
                                 <label for="cepInput">CEP (formato: 12345-678):</label>
                                 <div class="input-with-icon">
                                     <i class="fas fa-map-pin"></i>
-                                    <input type="text" id="cepInput" placeholder="Digite o CEP" class="modern-input">
+                                    <input type="text" id="cepInput" placeholder="Digite o CEP" class="modern-input"
+                                        maxlength="9">
                                 </div>
                             </div>
-                            
+
                             <div class="input-row">
                                 <div class="input-group">
                                     <label for="streetNumber">Número:</label>
@@ -527,22 +533,35 @@
                                         <input type="text" id="streetNumber" placeholder="Número" class="modern-input">
                                     </div>
                                 </div>
-                                
+
                                 <div class="input-group">
                                     <label for="addressComplement">Complemento:</label>
                                     <div class="input-with-icon">
                                         <i class="fas fa-info-circle"></i>
-                                        <input type="text" id="addressComplement" placeholder="Opcional" class="modern-input">
+                                        <input type="text" id="addressComplement" placeholder="Opcional"
+                                            class="modern-input">
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <div class="input-group">
+                                <label for="deliveryPriority">Prioridade de entrega:</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <select id="deliveryPriority" class="modern-input">
+                                        <option value="normal">Normal</option>
+                                        <option value="high">Alta</option>
+                                        <option value="urgent">Urgente</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <button id="addAddress" class="btn btn-secondary">
                                 <i class="fas fa-plus-circle"></i> Adicionar Endereço
                             </button>
-                            
+
                             <div id="addressList" class="address-list"></div>
-                            
+
                             <div class="action-buttons">
                                 <button id="calculateRoute" class="btn btn-primary">
                                     <i class="fas fa-route"></i> Calcular Melhor Rota
@@ -564,8 +583,8 @@
                             <div class="loading-spinner"></div>
                             <p>Calculando a melhor rota...</p>
                         </div>
-                        
-                        <div id="resultContainer" class="result-container">
+
+                        <div id="resultContainer" class="result-container" style="display: none;">
                             <div class="result-header">
                                 <h3><i class="fas fa-route"></i> Rota Otimizada</h3>
                                 <div class="result-meta">
@@ -577,15 +596,37 @@
                                     </span>
                                 </div>
                             </div>
-                            
+
+                            <div id="issueReportModal" class="modal" style="display:none;">
+                                <div class="modal-content">
+                                    <span class="close-modal">&times;</span>
+                                    <h3><i class="fas fa-exclamation-triangle"></i> Problemas Detectados na Rota</h3>
+
+                                    <div class="issues-summary">
+                                        <p>Encontramos <span id="issuesCount">0</span> possíveis problemas em seu
+                                            trajeto:</p>
+                                        <ul id="issuesList"></ul>
+                                    </div>
+
+                                    <div class="report-actions">
+                                        <button id="sendRouteReport" class="btn btn-primary">
+                                            <i class="fas fa-paper-plane"></i> Enviar Rota para Análise
+                                        </button>
+                                        <button id="ignoreIssues" class="btn btn-outline">
+                                            <i class="fas fa-times"></i> Ignorar e Continuar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="routeMap"></div>
-                            
+
                             <div class="route-details">
                                 <div class="route-list-container">
                                     <h4><i class="fas fa-list-ol"></i> Ordem de Entrega</h4>
                                     <ol class="route-list" id="routeList"></ol>
                                 </div>
-                                
+
                                 <div class="route-actions">
                                     <button id="openMaps" class="btn btn-primary">
                                         <i class="fab fa-google"></i> Abrir no Google Maps
@@ -596,7 +637,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </section>
@@ -604,7 +645,94 @@
         <!-- Features Section -->
         <section class="route-features" aria-labelledby="features-heading">
             <div class="container">
-                <h2 id="features-heading">Por que usar o <span>RouteMaster</span>?</h2>
+                <h2 id="features-heading">Por que usar o <span>ViaVerde</span>?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <h3>Economia de Combustível</h3>
+                        <p>Reduza em até 30% seus gastos com combustível através de rotas otimizadas.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Entrega Mais Rápida</h3>
+                        <p>Minimize o tempo de entrega com algoritmos inteligentes de roteamento.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Sustentabilidade</h3>
+                        <p>Contribua para a manutenção da cidade reportando problemas de iluminação e semáforos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Reporte de Problemas -->
+    <div id="problemReportModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-lightbulb-exclamation"></i> Reportar Problema de Iluminação/Semáforo</h3>
+
+            <div class="problem-details">
+                <div class="input-group">
+                    <label for="problemType">Tipo de Problema:</label>
+                    <select id="problemType" class="modern-input">
+                        <option value="poste">Poste de Iluminação Queimado</option>
+                        <option value="semaforo">Semáforo Defeituoso</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="problemLocation">Localização:</label>
+                    <input type="text" id="problemLocation" class="modern-input" readonly>
+                </div>
+
+                <div class="input-group">
+                    <label for="problemDescription">Descrição (opcional):</label>
+                    <textarea id="problemDescription" class="modern-input"
+                        placeholder="Descreva o problema com mais detalhes..."></textarea>
+                </div>
+
+                <div class="problem-actions">
+                    <button id="confirmProblemReport" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Reporte
+                    </button>
+                    <button id="cancelProblemReport" class="btn btn-outline">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 id="confirmationTitle">Reporte Enviado com Sucesso!</h3>
+            <p id="confirmationMessage">O problema foi reportado para a equipe de manutenção e será resolvido em breve.
+            </p>
+            <button id="closeConfirmationModal" class="btn btn-primary">
+                <i class="fas fa-check"></i> OK
+            </button>
+        </div>
+    </div>
+
+        <!-- Features Section -->
+        <section class="route-features" aria-labelledby="features-heading">
+            <div class="container">
+                <h2 id="features-heading">Por que usar o <span>ViaVerde</span>?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
