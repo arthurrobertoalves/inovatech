@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'base/_reset.css';
+@import 'base/_variables.css';
+@import 'base/_typography.css';
+@import 'layouts/_header.css';
+@import 'layouts/_footer.css';
+@import 'components/_buttons.css';
+@import 'components/_cards.css';
+@import 'components/_navbar.css';
+@import 'sections/home.css';
+@import 'styles.css';
+@import 'sections/projetos.css';
+@import 'components/faq.css';
+@import 'layouts/route-master.css';
+@import 'layouts/inicio.css';
+@import 'layouts/quemsomos.css';
+@import 'sections/parceiros.css';
+
+html{
+    scroll-behavior: smooth ;
+}
+
+
