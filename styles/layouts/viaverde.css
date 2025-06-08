@@ -1,0 +1,630 @@
+/* VARIÁVEIS DE TEMA - Baseado no tema verde */
+:root {
+  --lumenvia-primary: #2e7d32;
+  --lumenvia-primary-dark: #1b5e20;
+  --lumenvia-secondary: #4caf50;
+  --lumenvia-light: #e8f5e9;
+  --lumenvia-dark: #1e3a1e;
+  --lumenvia-text: #333333;
+  --lumenvia-text-light: #f5f5f5;
+  --lumenvia-accent: #81c784;
+  --lumenvia-background: #ffffff;
+}
+
+/* ESTILOS GERAIS */
+.lumenvia-main {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--lumenvia-background);
+  color: var(--lumenvia-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* TIPOGRAFIA */
+.lumenvia-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--lumenvia-primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.lumenvia-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--lumenvia-primary);
+  border-radius: 3px;
+}
+
+.lumenvia-highlight {
+  color: var(--lumenvia-primary-dark);
+}
+
+/* SEÇÃO DE APRESENTAÇÃO */
+.lumenvia-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--lumenvia-primary) 0%, var(--lumenvia-primary-dark) 100%);
+  color: var(--lumenvia-text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.lumenvia-header {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.lumenvia-header h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.lumenvia-tagline {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* PÍLULAS DE DESTAQUE */
+.lumenvia-pill-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.lumenvia-pill {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.lumenvia-pill:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ILUSTRAÇÃO */
+.lumenvia-city-illustration {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 3px solid white;
+}
+
+/* ===== MODAL DE ARQUITETURA ===== */
+.lumenvia-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 58, 30, 0.9); /* Fundo escuro semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.lumenvia-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lumenvia-modal-content {
+  background-color: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 700px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.lumenvia-modal.active .lumenvia-modal-content {
+  transform: translateY(0);
+}
+
+.lumenvia-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--lumenvia-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lumenvia-modal-close:hover {
+  color: var(--lumenvia-primary-dark);
+}
+
+.lumenvia-modal-title {
+  font-size: 1.8rem;
+  color: var(--lumenvia-primary-dark);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lumenvia-modal-title i {
+  font-size: 1.5rem;
+}
+
+/* CAMADAS DE TECNOLOGIA */
+.lumenvia-tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.lumenvia-tech-layer {
+  background-color: var(--lumenvia-light);
+  border-left: 4px solid var(--lumenvia-primary);
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+}
+
+.lumenvia-tech-layer:hover {
+  transform: translateX(5px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lumenvia-tech-layer h4 {
+  color: var(--lumenvia-primary-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.lumenvia-tech-layer p {
+  color: var(--lumenvia-text);
+  line-height: 1.6;
+}
+
+/* DIAGRAMA DE ARQUITETURA */
+.lumenvia-architecture-diagram {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px dashed var(--lumenvia-accent);
+}
+
+.lumenvia-diagram-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.lumenvia-diagram-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 150px;
+  margin: 0 0.5rem;
+  border: 1px solid var(--lumenvia-light);
+}
+
+.lumenvia-diagram-item i {
+  font-size: 1.5rem;
+  color: var(--lumenvia-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lumenvia-diagram-item p {
+  font-size: 0.9rem;
+  color: var(--lumenvia-text);
+  font-weight: 500;
+}
+
+.lumenvia-diagram-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lumenvia-primary);
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+/* BOTÕES DO MODAL */
+.lumenvia-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.lumenvia-modal-button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.lumenvia-modal-button-primary {
+  background-color: var(--lumenvia-primary);
+  color: white;
+}
+
+.lumenvia-modal-button-primary:hover {
+  background-color: var(--lumenvia-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+.lumenvia-modal-button-outline {
+  background-color: transparent;
+  border: 2px solid var(--lumenvia-primary);
+  color: var(--lumenvia-primary);
+}
+
+.lumenvia-modal-button-outline:hover {
+  background-color: var(--lumenvia-light);
+}
+
+/* RESPONSIVIDADE DO MODAL */
+@media (max-width: 768px) {
+  .lumenvia-modal-content {
+    padding: 1.5rem;
+  }
+  
+  .lumenvia-diagram-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lumenvia-diagram-item {
+    margin: 0.5rem 0;
+  }
+  
+  .lumenvia-diagram-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .lumenvia-modal-actions {
+    flex-direction: column;
+  }
+  
+  .lumenvia-modal-button {
+    width: 100%;
+  }
+}
+
+.lumenvia-city-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SEÇÃO DE RECURSOS */
+.lumenvia-explanation {
+  padding: 6rem 2rem;
+  background-color: var(--lumenvia-background);
+}
+
+.lumenvia-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lumenvia-feature-box {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--lumenvia-light);
+  transition: all 0.3s ease;
+}
+
+.lumenvia-feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: var(--lumenvia-accent);
+}
+
+.lumenvia-feature-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  background: var(--lumenvia-light);
+  color: var(--lumenvia-primary);
+}
+
+.lumenvia-feature-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--lumenvia-primary-dark);
+}
+
+.lumenvia-feature-box p {
+  color: var(--lumenvia-text);
+  line-height: 1.7;
+}
+
+/* SEÇÃO DE IMPACTO */
+.lumenvia-impact {
+  padding: 6rem 2rem;
+  background-color: var(--lumenvia-light);
+}
+
+.lumenvia-stats-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.lumenvia-stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.lumenvia-stat-item:hover {
+  transform: translateY(-5px);
+  background: var(--lumenvia-light);
+}
+
+.lumenvia-stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--lumenvia-primary);
+}
+
+.lumenvia-stat-label {
+  font-size: 0.95rem;
+  color: var(--lumenvia-text);
+}
+
+/* COMPARAÇÃO */
+.lumenvia-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lumenvia-comparison-item {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.lumenvia-comparison-best {
+  background: var(--lumenvia-light);
+  border: 2px solid var(--lumenvia-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.lumenvia-comparison-best::after {
+  content: 'MELHOR OPÇÃO';
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--lumenvia-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 2rem;
+  transform: rotate(45deg);
+}
+
+.lumenvia-comparison-item h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--lumenvia-primary-dark);
+}
+
+.lumenvia-issue-list, .lumenvia-benefit-list {
+  list-style: none;
+}
+
+.lumenvia-issue-list li, .lumenvia-benefit-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--lumenvia-text);
+}
+
+.lumenvia-issue-list i {
+  color: #e53935;
+}
+
+.lumenvia-benefit-list i {
+  color: var(--lumenvia-primary);
+}
+
+/* SEÇÃO DE INTEGRAÇÃO */
+.lumenvia-integration {
+  padding: 6rem 2rem;
+  background-color: white;
+}
+
+.lumenvia-flow-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 900px;
+}
+
+.lumenvia-flow-step {
+  text-align: center;
+  min-width: 200px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--lumenvia-light);
+  transition: all 0.3s ease;
+}
+
+.lumenvia-flow-step:hover {
+  transform: translateY(-5px);
+  background: var(--lumenvia-light);
+}
+
+.lumenvia-flow-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--lumenvia-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.75rem;
+  color: var(--lumenvia-primary);
+}
+
+.lumenvia-flow-arrow {
+  color: var(--lumenvia-primary);
+  font-size: 1.5rem;
+}
+
+.lumenvia-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.lumenvia-platform-item {
+  text-align: center;
+  max-width: 200px;
+}
+
+.lumenvia-platform-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: grayscale(100%) contrast(60%);
+  transition: filter 0.3s ease;
+}
+
+.lumenvia-platform-item:hover img {
+  filter: grayscale(0) contrast(100%);
+}
+
+.lumenvia-platform-item p {
+  color: var(--lumenvia-text);
+}
+
+/* BOTÕES */
+.lumenvia-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.lumenvia-button-primary {
+  background: var(--lumenvia-primary);
+  color: white;
+  border: 2px solid var(--lumenvia-primary);
+}
+
+.lumenvia-button-primary:hover {
+  background: var(--lumenvia-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+.lumenvia-button-secondary {
+  background: white;
+  color: var(--lumenvia-primary);
+  border: 2px solid var(--lumenvia-primary);
+}
+
+.lumenvia-button-secondary:hover {
+  background: var(--lumenvia-light);
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .lumenvia-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .lumenvia-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .lumenvia-section-title {
+    font-size: 2rem;
+  }
+  
+  .lumenvia-flow-diagram {
+    flex-direction: column;
+  }
+  
+  .lumenvia-flow-arrow {
+    transform: rotate(90deg);
+  }
+}

@@ -59,7 +59,7 @@
         <div class="hero-content">
             <h1 class="hero-title">InovaTech</h1>
             <p class="hero-subtitle">Soluções inteligentes para o mundo real</p>
-            <a href="#quem-somos" class="hero-button">Conheça nosso projeto</a>
+            <a href="#projetos" class="hero-button">Conheça nosso projeto</a>
         </div>
 </div>
 
@@ -189,7 +189,7 @@
                     <h1 class="hero-title">Confira nossos parceiros referências em <span>tecnologia sustentável</span></h1>
                     <p class="hero-text">Soluções inovadoras para um planeta mais verde e eficiente</p>
                     <div class="hero-buttons">
-                        <a href="#solucoes" class="btn btn-primary">Nossas Soluções</a>
+                        <a href="#projetos" class="btn btn-primary">Nossas Soluções</a>
                         <a href="#contato" class="btn btn-outline">Fale Conosco</a>
                     </div>
                 </div>
@@ -292,7 +292,7 @@
                 <h1>Nossos <span>Projetos</span> Inovadores</h1>
                 <p class="hero-subtitle">Tecnologia sustentável para um futuro mais brilhante</p>
                 <p>Conhença mais sobre nossos projetos abaixo!</p>
-                <a href="viaverde.html" class="btn btn-primary">ViaVerde</a>
+                <a href="#route-reading" class="btn btn-primary">ViaVerde</a>
             </div>
         </section>
 
@@ -474,293 +474,175 @@
     </main>
 
     <!-- route master parte blablabla-->
-    <main>
-        <section class="route-hero" aria-labelledby="route-heading">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 id="route-heading">Via<span>Verde</span></h1>
-                    <p class="hero-subtitle">Otimização inteligente de rotas para carretos e entregas com a
-                        <span>inovatech</span>
-                    </p>
-                    <div class="hero-badges">
-                        <span class="badge"><i class="fas fa-bolt"></i> Economize até 30% de combustível</span>
-                        <span class="badge"><i class="fas fa-clock"></i> Reduza o tempo de entrega</span>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="img/rota-de-entrega.jpg" alt="Ilustração do RouteMaster" loading="lazy">
-                </div>
+    <main class="lumenvia-main">
+    <section class="lumenvia-presentation" aria-labelledby="lumenvia-title">
+        <div class="lumenvia-header">
+            <h1 id="lumenvia-title">Lumen<span class="lumenvia-highlight">Via</span></h1>
+            <p class="lumenvia-tagline">Revolução em mobilidade urbana sustentável e segura</p>
+            
+            <div class="lumenvia-pill-container">
+                <span class="lumenvia-pill lumenvia-pill-green">
+                    <i class="fas fa-bolt"></i> Rotas inteligentes
+                </span>
+                <span class="lumenvia-pill lumenvia-pill-blue">
+                    <i class="fas fa-shield-halved"></i> Segurança ativa
+                </span>
             </div>
-        </section>
-        <section class="route-planner" aria-labelledby="planner-heading">
-            <div class="container">
-                <div class="planner-header">
-                    <h2 id="planner-heading">Planejador de <span>Rotas</span></h2>
-                    <p class="section-subtitle">Insira os endereços de entrega para otimização automática</p>
-                    <div class="section-divider"></div>
+        </div>
+
+        <div class="lumenvia-city-illustration">
+            <img src="img/smart-city-3d.png" alt="Cidade inteligente com rotas luminosas" loading="lazy">
+        </div>
+    </section>
+
+    <section class="lumenvia-explanation" aria-labelledby="lumenvia-explanation-title">
+        <h2 id="lumenvia-explanation-title" class="lumenvia-section-title">Tecnologia que <span class="lumenvia-highlight">ilumina</span> seu caminho</h2>
+        
+        <div class="lumenvia-feature-grid">
+            <div class="lumenvia-feature-box lumenvia-feature-safety">
+                <div class="lumenvia-feature-icon">
+                    <i class="fas fa-traffic-light"></i>
                 </div>
-
-                <div class="planner-container">
-                    <div class="input-card">
-                        <h3><i class="fas fa-map-marked-alt"></i> Informações da Rota</h3>
-
-                        <div class="input-group">
-                            <label for="orderCount">Quantidade de encomendas hoje:</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-box-open"></i>
-                                <input type="number" id="orderCount" min="0" placeholder="Ex: 5" class="modern-input">
-                            </div>
-                            <button id="confirmOrderCount" class="btn btn-primary" style="margin-top: 10px;">
-                                <i class="fas fa-check"></i> Confirmar
-                            </button>
-                        </div>
-
-                        <div id="addressInputContainer" class="address-input-container" style="display: none;">
-                            <div class="input-group">
-                                <label for="cepInput">CEP (formato: 12345-678):</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-map-pin"></i>
-                                    <input type="text" id="cepInput" placeholder="Digite o CEP" class="modern-input"
-                                        maxlength="9">
-                                </div>
-                            </div>
-
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label for="streetNumber">Número:</label>
-                                    <div class="input-with-icon">
-                                        <i class="fas fa-home"></i>
-                                        <input type="text" id="streetNumber" placeholder="Número" class="modern-input">
-                                    </div>
-                                </div>
-
-                                <div class="input-group">
-                                    <label for="addressComplement">Complemento:</label>
-                                    <div class="input-with-icon">
-                                        <i class="fas fa-info-circle"></i>
-                                        <input type="text" id="addressComplement" placeholder="Opcional"
-                                            class="modern-input">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="deliveryPriority">Prioridade de entrega:</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <select id="deliveryPriority" class="modern-input">
-                                        <option value="normal">Normal</option>
-                                        <option value="high">Alta</option>
-                                        <option value="urgent">Urgente</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <button id="addAddress" class="btn btn-secondary">
-                                <i class="fas fa-plus-circle"></i> Adicionar Endereço
-                            </button>
-
-                            <div id="addressList" class="address-list"></div>
-
-                            <div class="action-buttons">
-                                <button id="calculateRoute" class="btn btn-primary">
-                                    <i class="fas fa-route"></i> Calcular Melhor Rota
-                                </button>
-                                <button id="clearAll" class="btn btn-outline">
-                                    <i class="fas fa-trash-alt"></i> Limpar Tudo
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="noOrdersMessage" class="no-orders-message" style="display: none;">
-                            <i class="fas fa-check-circle"></i>
-                            <p>Você não tem encomendas para hoje! Aproveite para planejar suas rotas futuras.</p>
-                        </div>
-                    </div>
-
-                    <div class="map-card">
-                        <div class="loading" id="loadingIndicator">
-                            <div class="loading-spinner"></div>
-                            <p>Calculando a melhor rota...</p>
-                        </div>
-
-                        <div id="resultContainer" class="result-container" style="display: none;">
-                            <div class="result-header">
-                                <h3><i class="fas fa-route"></i> Rota Otimizada</h3>
-                                <div class="result-meta">
-                                    <span id="distanceInfo" class="distance-info">
-                                        <i class="fas fa-road"></i> <span id="distanceText">-- km</span>
-                                    </span>
-                                    <span id="timeInfo" class="time-info">
-                                        <i class="fas fa-clock"></i> <span id="timeText">-- min</span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div id="issueReportModal" class="modal" style="display:none;">
-                                <div class="modal-content">
-                                    <span class="close-modal">&times;</span>
-                                    <h3><i class="fas fa-exclamation-triangle"></i> Problemas Detectados na Rota</h3>
-
-                                    <div class="issues-summary">
-                                        <p>Encontramos <span id="issuesCount">0</span> possíveis problemas em seu
-                                            trajeto:</p>
-                                        <ul id="issuesList"></ul>
-                                    </div>
-
-                                    <div class="report-actions">
-                                        <button id="sendRouteReport" class="btn btn-primary">
-                                            <i class="fas fa-paper-plane"></i> Enviar Rota para Análise
-                                        </button>
-                                        <button id="ignoreIssues" class="btn btn-outline">
-                                            <i class="fas fa-times"></i> Ignorar e Continuar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="routeMap"></div>
-
-                            <div class="route-details">
-                                <div class="route-list-container">
-                                    <h4><i class="fas fa-list-ol"></i> Ordem de Entrega</h4>
-                                    <ol class="route-list" id="routeList"></ol>
-                                </div>
-
-                                <div class="route-actions">
-                                    <button id="openMaps" class="btn btn-primary">
-                                        <i class="fab fa-google"></i> Abrir no Google Maps
-                                    </button>
-                                    <button id="exportRoute" class="btn btn-secondary">
-                                        <i class="fas fa-file-export"></i> Exportar Rota
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3>Desvio proativo</h3>
+                <p>Identifica e evita áreas com problemas de infraestrutura como postes danificados, semáforos inoperantes e vias perigosas.</p>
             </div>
-        </section>
 
-        <!-- Features Section -->
-        <section class="route-features" aria-labelledby="features-heading">
-            <div class="container">
-                <h2 id="features-heading">Por que usar o <span>ViaVerde</span>?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gas-pump"></i>
-                        </div>
-                        <h3>Economia de Combustível</h3>
-                        <p>Reduza em até 30% seus gastos com combustível através de rotas otimizadas.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Entrega Mais Rápida</h3>
-                        <p>Minimize o tempo de entrega com algoritmos inteligentes de roteamento.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3>Sustentabilidade</h3>
-                        <p>Contribua para a manutenção da cidade reportando problemas de iluminação e semáforos.</p>
-                    </div>
+            <div class="lumenvia-feature-box lumenvia-feature-eco">
+                <div class="lumenvia-feature-icon">
+                    <i class="fas fa-leaf"></i>
                 </div>
+                <h3>Rotas verdes</h3>
+                <p>Trajetos otimizados para reduzir emissões e consumo energético, priorizando vias com menor impacto ambiental.</p>
             </div>
-        </section>
-    </main>
 
-    <!-- Modal de Reporte de Problemas -->
-    <div id="problemReportModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3><i class="fas fa-lightbulb-exclamation"></i> Reportar Problema de Iluminação/Semáforo</h3>
-
-            <div class="problem-details">
-                <div class="input-group">
-                    <label for="problemType">Tipo de Problema:</label>
-                    <select id="problemType" class="modern-input">
-                        <option value="poste">Poste de Iluminação Queimado</option>
-                        <option value="semaforo">Semáforo Defeituoso</option>
-                        <option value="outro">Outro</option>
-                    </select>
+            <div class="lumenvia-feature-box lumenvia-feature-ai">
+                <div class="lumenvia-feature-icon">
+                    <i class="fas fa-brain"></i>
                 </div>
+                <h3>Inteligência urbana</h3>
+                <p>Algoritmos que analisam em tempo real as condições da cidade para oferecer a melhor rota a cada momento.</p>
+            </div>
+        </div>
+    </section>
 
-                <div class="input-group">
-                    <label for="problemLocation">Localização:</label>
-                    <input type="text" id="problemLocation" class="modern-input" readonly>
-                </div>
+    <section class="lumenvia-impact" aria-labelledby="lumenvia-impact-title">
+        <h2 id="lumenvia-impact-title" class="lumenvia-section-title">Transformação <span class="lumenvia-highlight">mensurável</span></h2>
+        
+        <div class="lumenvia-stats-panel">
+            <div class="lumenvia-stat-item">
+                <span class="lumenvia-stat-number">+85%</span>
+                <span class="lumenvia-stat-label">Redução de incidentes</span>
+                <div class="lumenvia-stat-bar"></div>
+            </div>
 
-                <div class="input-group">
-                    <label for="problemDescription">Descrição (opcional):</label>
-                    <textarea id="problemDescription" class="modern-input"
-                        placeholder="Descreva o problema com mais detalhes..."></textarea>
-                </div>
+            <div class="lumenvia-stat-item">
+                <span class="lumenvia-stat-number">-32%</span>
+                <span class="lumenvia-stat-label">Emissões de CO₂</span>
+                <div class="lumenvia-stat-bar"></div>
+            </div>
 
-                <div class="problem-actions">
-                    <button id="confirmProblemReport" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Enviar Reporte
-                    </button>
-                    <button id="cancelProblemReport" class="btn btn-outline">
-                        <i class="fas fa-times"></i> Cancelar
-                    </button>
+            <div class="lumenvia-stat-item">
+                <span class="lumenvia-stat-number">47%</span>
+                <span class="lumenvia-stat-label">Economia energética</span>
+                <div class="lumenvia-stat-bar"></div>
+            </div>
+        </div>
+
+        <div class="lumenvia-comparison">
+            <div class="lumenvia-comparison-item">
+                <h4>Rota convencional</h4>
+                <ul class="lumenvia-issue-list">
+                    <li><i class="fas fa-times-circle"></i> Exposta a riscos urbanos</li>
+                    <li><i class="fas fa-times-circle"></i> Maior consumo energético</li>
+                    <li><i class="fas fa-times-circle"></i> Tempo variável</li>
+                </ul>
+            </div>
+
+            <div class="lumenvia-comparison-item lumenvia-comparison-best">
+                <h4>Rota LumenVia</h4>
+                <ul class="lumenvia-benefit-list">
+                    <li><i class="fas fa-check-circle"></i> Proteção ativa contra riscos</li>
+                    <li><i class="fas fa-check-circle"></i> Sustentabilidade comprovada</li>
+                    <li><i class="fas fa-check-circle"></i> Eficiência garantida</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="lumenvia-integration" aria-labelledby="lumenvia-integration-title">
+        <h2 id="lumenvia-integration-title" class="lumenvia-section-title">Integração <span class="lumenvia-highlight">transparente</span></h2>
+        
+        <div class="lumenvia-flow-diagram">
+            <div class="lumenvia-flow-step">
+                <div class="lumenvia-flow-icon">
+                    <i class="fas fa-satellite-dish"></i>
                 </div>
+                <p>Coleta de dados urbanos</p>
+            </div>
+
+            <div class="lumenvia-flow-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <div class="lumenvia-flow-step">
+                <div class="lumenvia-flow-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <p>Processamento inteligente</p>
+            </div>
+
+            <div class="lumenvia-flow-arrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <div class="lumenvia-flow-step">
+                <div class="lumenvia-flow-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <p>Atualização de rotas</p>
+            </div>
+        </div>
+
+        <div class="lumenvia-platforms">
+            <div class="lumenvia-platform-item">
+                <img src="img/navigation-apps.png" alt="Aplicativos de navegação" loading="lazy">
+                <p>Compatível com principais apps de navegação</p>
+            </div>
+
+            <div class="lumenvia-platform-item">
+                <img src="img/city-systems.png" alt="Sistemas municipais" loading="lazy">
+                <p>Integração com gestão urbana</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="lumenvia-modal" id="lumenviaTechModal">
+    <div class="lumenvia-modal-content">
+        <button class="lumenvia-modal-close">&times;</button>
+        
+        <h3 class="lumenvia-modal-title">
+            <i class="fas fa-microchip"></i> Arquitetura LumenVia
+        </h3>
+        
+        <div class="lumenvia-tech-stack">
+            <div class="lumenvia-tech-layer">
+                <h4>Camada de sensores</h4>
+                <p>IoT urbano e dados municipais em tempo real</p>
+            </div>
+            
+            <div class="lumenvia-tech-layer">
+                <h4>Núcleo de análise</h4>
+                <p>Algoritmos de IA especializados em segurança viária</p>
+            </div>
+            
+            <div class="lumenvia-tech-layer">
+                <h4>Interface de aplicação</h4>
+                <p>Integração contínua com plataformas de navegação</p>
             </div>
         </div>
     </div>
-
-    <!-- Modal de Confirmação -->
-    <div id="confirmationModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <div class="confirmation-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 id="confirmationTitle">Reporte Enviado com Sucesso!</h3>
-            <p id="confirmationMessage">O problema foi reportado para a equipe de manutenção e será resolvido em breve.
-            </p>
-            <button id="closeConfirmationModal" class="btn btn-primary">
-                <i class="fas fa-check"></i> OK
-            </button>
-        </div>
-    </div>
-
-        <!-- Features Section -->
-        <section class="route-features" aria-labelledby="features-heading">
-            <div class="container">
-                <h2 id="features-heading">Por que usar o <span>ViaVerde</span>?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gas-pump"></i>
-                        </div>
-                        <h3>Economia de Combustível</h3>
-                        <p>Reduza em até 30% seus gastos com combustível através de rotas otimizadas.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Entrega Mais Rápida</h3>
-                        <p>Minimize o tempo de entrega com algoritmos inteligentes de roteamento.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <h3>Integração Completa</h3>
-                        <p>Visualização em mapa e exportação para seu aplicativo de navegação favorito.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main> 
+</div> 
 
     <footer class="footer">
         <div class="container">
